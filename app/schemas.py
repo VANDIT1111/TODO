@@ -3,13 +3,13 @@ from enum import Enum
 
 
 class RoleEnum(str,Enum):
-    ADMIN : 'admin'
-    USER : 'user'
+    ADMIN = 'admin'
+    USER = 'user'
     
     
 class TaskStatusEnum(str,Enum):
-    PENDING : 'pending'
-    COMPLETED : 'completed'
+    PENDING = 'pending'
+    COMPLETED = 'completed'
     
 
 class UserCreate(BaseModel):
@@ -22,6 +22,11 @@ class UserOut(BaseModel):
     username:str
     email:str
     role:RoleEnum
+    
+class UserLogin(BaseModel):
+    username:str
+    email:str
+    password:str
     
 class UserResponse(BaseModel):
     id:int
